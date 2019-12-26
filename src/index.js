@@ -8,18 +8,26 @@ import Header from './components/Header/Header';
 const App = () => {
   const content = { 
     course: 'Half Stack application development',
-    part1: 'Fundamentals of React',
-    exercises1: 10,
-    part2: 'Using props to pass data',
-    exercises2:  7,
-    part3: 'State of a component',
-    exercises3: 14,
+    parts: [
+      {
+        name: 'Fundamentals of React',
+        exercises: 10
+      },
+      {
+        name: 'Using props to pass data',
+        exercises: 7
+      },
+      {
+        name: 'State of a component',
+        exercises: 14
+      }
+    ],
   };
   return (
     <div>
       <Header header={content}/>
-      <Content content={content}/>
-      <Total total={content}/>
+      <Content content={content.parts}/>
+      <Total total={content.parts}/>
     </div>
   )
 }
